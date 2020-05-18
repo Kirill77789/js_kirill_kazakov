@@ -3,7 +3,7 @@
     "countGoods": 2,
     "contents": [
         {
-            "quantity": 2,
+            "quantity": 1,
             "id_product": 123,
             "product_name": "Ноутбук",
             "price": 45600
