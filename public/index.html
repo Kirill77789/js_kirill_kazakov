@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <header>
+        <div class="logo">Интернет-магазин</div>
+        <div class="cart">
+            <search :products="products"></search>
+            <cart :cart="cart"
+                  :imgCatalog="imgCatalog"
+                  @add="addProduct"
+                  @dell="dellProduct"></cart>
+        </div>
+    </header>
+    <main>
+        <div class="products">
+            <div class="product-item product-info"  v-for="product of products" :data-id="product.id_product" :key="product.id_product">
+                <img :src="imgCatalog" alt="Some img">
+                <div class="desc">
+                    <h3>{{product.product_name}}</h3>
+                    <p>{{product.price}}₽</p>
+                    <button class="by-btn btn-increase" @click="addProduct(product)">Добавить в корзину</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--<script src="./js/main.js"></script>-->
+<script src="js/search.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/new_main.js"></script>
+</body>
+</html>
